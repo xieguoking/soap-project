@@ -7,6 +7,10 @@
 
 package com.shdata.gateway.plugin.soap.server;
 
+import java.security.SecureRandom;
+import java.util.Base64;
+import java.util.UUID;
+
 public class OdocExchangeWebServiceHttpBindingImpl implements com.shdata.gateway.plugin.soap.server.OdocExchangeWebServicePortType{
     public java.lang.String getAccessSystemData(java.lang.String in0) throws java.rmi.RemoteException {
         return "hello "+in0;
@@ -21,7 +25,10 @@ public class OdocExchangeWebServiceHttpBindingImpl implements com.shdata.gateway
     }
 
     public java.lang.String sendData(java.lang.String in0, java.lang.String in1) throws java.rmi.RemoteException {
-        return null;
+        SecureRandom sr = new SecureRandom();
+        byte[] data =  sr.generateSeed(3*1024);
+
+        return Base64.getEncoder().encodeToString(data);
     }
 
     public java.lang.String sendBaseXMLEsbWebServiceToAk006(java.lang.String in0, java.lang.String in1) throws java.rmi.RemoteException {
@@ -41,7 +48,7 @@ public class OdocExchangeWebServiceHttpBindingImpl implements com.shdata.gateway
     }
 
     public java.lang.String login(java.lang.String in0, java.lang.String in1, int in2, java.lang.String in3) throws java.rmi.RemoteException {
-        return null;
+        return UUID.randomUUID().toString();
     }
 
     public java.lang.String updateReceiveDocStatus(java.lang.String in0, java.lang.String in1) throws java.rmi.RemoteException {

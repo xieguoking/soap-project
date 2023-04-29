@@ -15,8 +15,9 @@ import java.rmi.RemoteException;
 public class Client {
     public static void main(String[] args) throws ServiceException, RemoteException {
         final OdocExchangeWebServicePortType port = new OdocExchangeWebServiceLocator().getOdocExchangeWebServiceHttpPort();
-        final String test = port.getAccessSystemData("test");
 
-        System.out.println(test);
+        System.out.println(port.getAccessSystemData("谢国钧"));
+        System.out.println(port.sendData("","谢国钧"));
+        System.out.println(port.login("xieguojun","password",1,""));
     }
 }

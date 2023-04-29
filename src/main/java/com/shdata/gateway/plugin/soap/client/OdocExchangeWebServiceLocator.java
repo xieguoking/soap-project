@@ -22,7 +22,8 @@ public class OdocExchangeWebServiceLocator extends org.apache.axis.client.Servic
     }
 
     // Use to get a proxy class for OdocExchangeWebServiceHttpPort
-    private java.lang.String OdocExchangeWebServiceHttpPort_address = "http://127.0.0.1:8080/services/OdocExchangeWebServiceHttpPort?wsdl";
+    //private java.lang.String OdocExchangeWebServiceHttpPort_address = "http://127.0.0.1:8080/services/OdocExchangeWebServiceHttpPort?wsdl";
+    private java.lang.String OdocExchangeWebServiceHttpPort_address = "http://192.168.2.84:6001/odoc";
 
     public java.lang.String getOdocExchangeWebServiceHttpPortAddress() {
         return OdocExchangeWebServiceHttpPort_address;

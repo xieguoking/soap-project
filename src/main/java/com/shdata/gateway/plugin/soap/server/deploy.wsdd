@@ -1,0 +1,87 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from OdocExchangeWebService WSDL service -->
+
+  <service name="OdocExchangeWebServiceHttpPort" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://localhost/services/OdocExchangeWebService"/>
+      <parameter name="wsdlServiceElement" value="OdocExchangeWebService"/>
+      <parameter name="schemaQualified" value="http://localhost/services/OdocExchangeWebService"/>
+      <parameter name="wsdlServicePort" value="OdocExchangeWebServiceHttpPort"/>
+      <parameter name="className" value="com.shdata.gateway.plugin.soap.server.OdocExchangeWebServiceHttpBindingImpl"/>
+      <parameter name="wsdlPortType" value="OdocExchangeWebServicePortType"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getAccessSystemData" qname="operNS:getAccessSystemData" xmlns:operNS="http://localhost/services/OdocExchangeWebService" returnQName="retNS:out" xmlns:retNS="http://localhost/services/OdocExchangeWebService" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:in0" xmlns:pns="http://localhost/services/OdocExchangeWebService" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getExchangeFields" qname="operNS:getExchangeFields" xmlns:operNS="http://localhost/services/OdocExchangeWebService" returnQName="retNS:out" xmlns:retNS="http://localhost/services/OdocExchangeWebService" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:in0" xmlns:pns="http://localhost/services/OdocExchangeWebService" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="receiveDocFromAK007AndUpdateFormDataByRequestId" qname="operNS:receiveDocFromAK007AndUpdateFormDataByRequestId" xmlns:operNS="http://localhost/services/OdocExchangeWebService" returnQName="retNS:out" xmlns:retNS="http://localhost/services/OdocExchangeWebService" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:in0" xmlns:pns="http://localhost/services/OdocExchangeWebService" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="sendData" qname="operNS:sendData" xmlns:operNS="http://localhost/services/OdocExchangeWebService" returnQName="retNS:out" xmlns:retNS="http://localhost/services/OdocExchangeWebService" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:in0" xmlns:pns="http://localhost/services/OdocExchangeWebService" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:in1" xmlns:pns="http://localhost/services/OdocExchangeWebService" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="sendBaseXMLEsbWebServiceToAk006" qname="operNS:sendBaseXMLEsbWebServiceToAk006" xmlns:operNS="http://localhost/services/OdocExchangeWebService" returnQName="retNS:out" xmlns:retNS="http://localhost/services/OdocExchangeWebService" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:in0" xmlns:pns="http://localhost/services/OdocExchangeWebService" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:in1" xmlns:pns="http://localhost/services/OdocExchangeWebService" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="synchronizeOdocExchangeReceiveOrSendUnit" qname="operNS:synchronizeOdocExchangeReceiveOrSendUnit" xmlns:operNS="http://localhost/services/OdocExchangeWebService" returnQName="retNS:out" xmlns:retNS="http://localhost/services/OdocExchangeWebService" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:in0" xmlns:pns="http://localhost/services/OdocExchangeWebService" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="postDocOperateData" qname="operNS:postDocOperateData" xmlns:operNS="http://localhost/services/OdocExchangeWebService" returnQName="retNS:out" xmlns:retNS="http://localhost/services/OdocExchangeWebService" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:in0" xmlns:pns="http://localhost/services/OdocExchangeWebService" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:in1" xmlns:pns="http://localhost/services/OdocExchangeWebService" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="postReceivedRouteStatusData" qname="operNS:postReceivedRouteStatusData" xmlns:operNS="http://localhost/services/OdocExchangeWebService" returnQName="retNS:out" xmlns:retNS="http://localhost/services/OdocExchangeWebService" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:in0" xmlns:pns="http://localhost/services/OdocExchangeWebService" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:in1" xmlns:pns="http://localhost/services/OdocExchangeWebService" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="login" qname="operNS:login" xmlns:operNS="http://localhost/services/OdocExchangeWebService" returnQName="retNS:out" xmlns:retNS="http://localhost/services/OdocExchangeWebService" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="urn:com.engine.odocExchange.ws.OdocExchangeWebService.login" >
+        <parameter qname="pns:in0" xmlns:pns="http://localhost/services/OdocExchangeWebService" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:in1" xmlns:pns="http://localhost/services/OdocExchangeWebService" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:in2" xmlns:pns="http://localhost/services/OdocExchangeWebService" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:in3" xmlns:pns="http://localhost/services/OdocExchangeWebService" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="updateReceiveDocStatus" qname="operNS:updateReceiveDocStatus" xmlns:operNS="http://localhost/services/OdocExchangeWebService" returnQName="retNS:out" xmlns:retNS="http://localhost/services/OdocExchangeWebService" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:in0" xmlns:pns="http://localhost/services/OdocExchangeWebService" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:in1" xmlns:pns="http://localhost/services/OdocExchangeWebService" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getReceiveSystemXml" qname="operNS:getReceiveSystemXml" xmlns:operNS="http://localhost/services/OdocExchangeWebService" returnQName="retNS:out" xmlns:retNS="http://localhost/services/OdocExchangeWebService" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:in0" xmlns:pns="http://localhost/services/OdocExchangeWebService" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="postReceivedOperateStatusData" qname="operNS:postReceivedOperateStatusData" xmlns:operNS="http://localhost/services/OdocExchangeWebService" returnQName="retNS:out" xmlns:retNS="http://localhost/services/OdocExchangeWebService" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:in0" xmlns:pns="http://localhost/services/OdocExchangeWebService" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:in1" xmlns:pns="http://localhost/services/OdocExchangeWebService" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="receiveDocFromE8AndCreateWorkflow" qname="operNS:receiveDocFromE8AndCreateWorkflow" xmlns:operNS="http://localhost/services/OdocExchangeWebService" returnQName="retNS:out" xmlns:retNS="http://localhost/services/OdocExchangeWebService" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:in0" xmlns:pns="http://localhost/services/OdocExchangeWebService" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:in1" xmlns:pns="http://localhost/services/OdocExchangeWebService" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="receiveData" qname="operNS:receiveData" xmlns:operNS="http://localhost/services/OdocExchangeWebService" returnQName="retNS:out" xmlns:retNS="http://localhost/services/OdocExchangeWebService" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:in0" xmlns:pns="http://localhost/services/OdocExchangeWebService" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:in1" xmlns:pns="http://localhost/services/OdocExchangeWebService" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getDocOperateData" qname="operNS:getDocOperateData" xmlns:operNS="http://localhost/services/OdocExchangeWebService" returnQName="retNS:out" xmlns:retNS="http://localhost/services/OdocExchangeWebService" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:in0" xmlns:pns="http://localhost/services/OdocExchangeWebService" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:in1" xmlns:pns="http://localhost/services/OdocExchangeWebService" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getAllUnProcessData" qname="operNS:getAllUnProcessData" xmlns:operNS="http://localhost/services/OdocExchangeWebService" returnQName="retNS:out" xmlns:retNS="http://localhost/services/OdocExchangeWebService" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:in0" xmlns:pns="http://localhost/services/OdocExchangeWebService" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:in1" xmlns:pns="http://localhost/services/OdocExchangeWebService" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="getAccessSystemData getExchangeFields receiveDocFromAK007AndUpdateFormDataByRequestId sendData sendBaseXMLEsbWebServiceToAk006 synchronizeOdocExchangeReceiveOrSendUnit postDocOperateData postReceivedRouteStatusData login updateReceiveDocStatus getReceiveSystemXml postReceivedOperateStatusData receiveDocFromE8AndCreateWorkflow receiveData getDocOperateData getAllUnProcessData"/>
+
+  </service>
+</deployment>

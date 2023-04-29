@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://localhost/services/OdocExchangeWebService"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                  xmlns:tns="http://localhost/services/OdocExchangeWebService"
+                  xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <wsdl:types>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified"
+                    elementFormDefault="qualified" targetNamespace="http://localhost/services/OdocExchangeWebService">
+            <xsd:element name="getAccessSystemData">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="getAccessSystemDataResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="getExchangeFields">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="getExchangeFieldsResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="receiveDocFromAK007AndUpdateFormDataByRequestId">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="receiveDocFromAK007AndUpdateFormDataByRequestIdResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="sendData">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="in1" nillable="true" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="sendDataResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="sendBaseXMLEsbWebServiceToAk006">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="in1" nillable="true" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="sendBaseXMLEsbWebServiceToAk006Response">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="synchronizeOdocExchangeReceiveOrSendUnit">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="synchronizeOdocExchangeReceiveOrSendUnitResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="postDocOperateData">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="in1" nillable="true" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="postDocOperateDataResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="postReceivedRouteStatusData">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="in0" type="xsd:int"/>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="in1" nillable="true" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="postReceivedRouteStatusDataResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="login">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="in1" nillable="true" type="xsd:string"/>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="in2" type="xsd:int"/>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="in3" nillable="true" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="loginResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="updateReceiveDocStatus">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="in1" nillable="true" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="updateReceiveDocStatusResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="getReceiveSystemXml">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="getReceiveSystemXmlResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="postReceivedOperateStatusData">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="in0" type="xsd:int"/>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="in1" nillable="true" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="postReceivedOperateStatusDataResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="receiveDocFromE8AndCreateWorkflow">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="in1" nillable="true" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="receiveDocFromE8AndCreateWorkflowResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="receiveData">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="in0" type="xsd:int"/>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="in1" nillable="true" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="receiveDataResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="getDocOperateData">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="in0" type="xsd:int"/>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="in1" nillable="true" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="getDocOperateDataResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="getAllUnProcessData">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="in1" nillable="true" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="getAllUnProcessDataResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="sendBaseXMLEsbWebServiceToAk006Request">
+        <wsdl:part name="parameters" element="tns:sendBaseXMLEsbWebServiceToAk006">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="updateReceiveDocStatusResponse">
+        <wsdl:part name="parameters" element="tns:updateReceiveDocStatusResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="receiveDocFromE8AndCreateWorkflowRequest">
+        <wsdl:part name="parameters" element="tns:receiveDocFromE8AndCreateWorkflow">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="postDocOperateDataRequest">
+        <wsdl:part name="parameters" element="tns:postDocOperateData">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="receiveDocFromE8AndCreateWorkflowResponse">
+        <wsdl:part name="parameters" element="tns:receiveDocFromE8AndCreateWorkflowResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getExchangeFieldsResponse">
+        <wsdl:part name="parameters" element="tns:getExchangeFieldsResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="postReceivedOperateStatusDataRequest">
+        <wsdl:part name="parameters" element="tns:postReceivedOperateStatusData">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getAllUnProcessDataResponse">
+        <wsdl:part name="parameters" element="tns:getAllUnProcessDataResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="sendBaseXMLEsbWebServiceToAk006Response">
+        <wsdl:part name="parameters" element="tns:sendBaseXMLEsbWebServiceToAk006Response">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="updateReceiveDocStatusRequest">
+        <wsdl:part name="parameters" element="tns:updateReceiveDocStatus">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getExchangeFieldsRequest">
+        <wsdl:part name="parameters" element="tns:getExchangeFields">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getDocOperateDataResponse">
+        <wsdl:part name="parameters" element="tns:getDocOperateDataResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getReceiveSystemXmlRequest">
+        <wsdl:part name="parameters" element="tns:getReceiveSystemXml">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getReceiveSystemXmlResponse">
+        <wsdl:part name="parameters" element="tns:getReceiveSystemXmlResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getAllUnProcessDataRequest">
+        <wsdl:part name="parameters" element="tns:getAllUnProcessData">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getAccessSystemDataResponse">
+        <wsdl:part name="parameters" element="tns:getAccessSystemDataResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="postReceivedRouteStatusDataRequest">
+        <wsdl:part name="parameters" element="tns:postReceivedRouteStatusData">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="postReceivedOperateStatusDataResponse">
+        <wsdl:part name="parameters" element="tns:postReceivedOperateStatusDataResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="postReceivedRouteStatusDataResponse">
+        <wsdl:part name="parameters" element="tns:postReceivedRouteStatusDataResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="sendDataResponse">
+        <wsdl:part name="parameters" element="tns:sendDataResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getDocOperateDataRequest">
+        <wsdl:part name="parameters" element="tns:getDocOperateData">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="synchronizeOdocExchangeReceiveOrSendUnitRequest">
+        <wsdl:part name="parameters" element="tns:synchronizeOdocExchangeReceiveOrSendUnit">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="receiveDataResponse">
+        <wsdl:part name="parameters" element="tns:receiveDataResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="synchronizeOdocExchangeReceiveOrSendUnitResponse">
+        <wsdl:part name="parameters" element="tns:synchronizeOdocExchangeReceiveOrSendUnitResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="receiveDataRequest">
+        <wsdl:part name="parameters" element="tns:receiveData">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getAccessSystemDataRequest">
+        <wsdl:part name="parameters" element="tns:getAccessSystemData">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="sendDataRequest">
+        <wsdl:part name="parameters" element="tns:sendData">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="receiveDocFromAK007AndUpdateFormDataByRequestIdRequest">
+        <wsdl:part name="parameters" element="tns:receiveDocFromAK007AndUpdateFormDataByRequestId">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="receiveDocFromAK007AndUpdateFormDataByRequestIdResponse">
+        <wsdl:part name="parameters" element="tns:receiveDocFromAK007AndUpdateFormDataByRequestIdResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="postDocOperateDataResponse">
+        <wsdl:part name="parameters" element="tns:postDocOperateDataResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="loginRequest">
+        <wsdl:part name="parameters" element="tns:login">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="loginResponse">
+        <wsdl:part name="parameters" element="tns:loginResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="OdocExchangeWebServicePortType">
+        <wsdl:operation name="getAccessSystemData">
+            <wsdl:input name="getAccessSystemDataRequest" message="tns:getAccessSystemDataRequest">
+            </wsdl:input>
+            <wsdl:output name="getAccessSystemDataResponse" message="tns:getAccessSystemDataResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getExchangeFields">
+            <wsdl:input name="getExchangeFieldsRequest" message="tns:getExchangeFieldsRequest">
+            </wsdl:input>
+            <wsdl:output name="getExchangeFieldsResponse" message="tns:getExchangeFieldsResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="receiveDocFromAK007AndUpdateFormDataByRequestId">
+            <wsdl:input name="receiveDocFromAK007AndUpdateFormDataByRequestIdRequest"
+                        message="tns:receiveDocFromAK007AndUpdateFormDataByRequestIdRequest">
+            </wsdl:input>
+            <wsdl:output name="receiveDocFromAK007AndUpdateFormDataByRequestIdResponse"
+                         message="tns:receiveDocFromAK007AndUpdateFormDataByRequestIdResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="sendData">
+            <wsdl:input name="sendDataRequest" message="tns:sendDataRequest">
+            </wsdl:input>
+            <wsdl:output name="sendDataResponse" message="tns:sendDataResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="sendBaseXMLEsbWebServiceToAk006">
+            <wsdl:input name="sendBaseXMLEsbWebServiceToAk006Request"
+                        message="tns:sendBaseXMLEsbWebServiceToAk006Request">
+            </wsdl:input>
+            <wsdl:output name="sendBaseXMLEsbWebServiceToAk006Response"
+                         message="tns:sendBaseXMLEsbWebServiceToAk006Response">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="synchronizeOdocExchangeReceiveOrSendUnit">
+            <wsdl:input name="synchronizeOdocExchangeReceiveOrSendUnitRequest"
+                        message="tns:synchronizeOdocExchangeReceiveOrSendUnitRequest">
+            </wsdl:input>
+            <wsdl:output name="synchronizeOdocExchangeReceiveOrSendUnitResponse"
+                         message="tns:synchronizeOdocExchangeReceiveOrSendUnitResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="postDocOperateData">
+            <wsdl:input name="postDocOperateDataRequest" message="tns:postDocOperateDataRequest">
+            </wsdl:input>
+            <wsdl:output name="postDocOperateDataResponse" message="tns:postDocOperateDataResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="postReceivedRouteStatusData">
+            <wsdl:input name="postReceivedRouteStatusDataRequest" message="tns:postReceivedRouteStatusDataRequest">
+            </wsdl:input>
+            <wsdl:output name="postReceivedRouteStatusDataResponse" message="tns:postReceivedRouteStatusDataResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="login">
+            <wsdl:input name="loginRequest" message="tns:loginRequest">
+            </wsdl:input>
+            <wsdl:output name="loginResponse" message="tns:loginResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="updateReceiveDocStatus">
+            <wsdl:input name="updateReceiveDocStatusRequest" message="tns:updateReceiveDocStatusRequest">
+            </wsdl:input>
+            <wsdl:output name="updateReceiveDocStatusResponse" message="tns:updateReceiveDocStatusResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getReceiveSystemXml">
+            <wsdl:input name="getReceiveSystemXmlRequest" message="tns:getReceiveSystemXmlRequest">
+            </wsdl:input>
+            <wsdl:output name="getReceiveSystemXmlResponse" message="tns:getReceiveSystemXmlResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="postReceivedOperateStatusData">
+            <wsdl:input name="postReceivedOperateStatusDataRequest" message="tns:postReceivedOperateStatusDataRequest">
+            </wsdl:input>
+            <wsdl:output name="postReceivedOperateStatusDataResponse"
+                         message="tns:postReceivedOperateStatusDataResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="receiveDocFromE8AndCreateWorkflow">
+            <wsdl:input name="receiveDocFromE8AndCreateWorkflowRequest"
+                        message="tns:receiveDocFromE8AndCreateWorkflowRequest">
+            </wsdl:input>
+            <wsdl:output name="receiveDocFromE8AndCreateWorkflowResponse"
+                         message="tns:receiveDocFromE8AndCreateWorkflowResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="receiveData">
+            <wsdl:input name="receiveDataRequest" message="tns:receiveDataRequest">
+            </wsdl:input>
+            <wsdl:output name="receiveDataResponse" message="tns:receiveDataResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getDocOperateData">
+            <wsdl:input name="getDocOperateDataRequest" message="tns:getDocOperateDataRequest">
+            </wsdl:input>
+            <wsdl:output name="getDocOperateDataResponse" message="tns:getDocOperateDataResponse">
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAllUnProcessData">
+            <wsdl:input name="getAllUnProcessDataRequest" message="tns:getAllUnProcessDataRequest">
+            </wsdl:input>
+            <wsdl:output name="getAllUnProcessDataResponse" message="tns:getAllUnProcessDataResponse">
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="OdocExchangeWebServiceHttpBinding" type="tns:OdocExchangeWebServicePortType">
+        <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="getAccessSystemData">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="getAccessSystemDataRequest">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getAccessSystemDataResponse">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getExchangeFields">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="getExchangeFieldsRequest">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getExchangeFieldsResponse">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="receiveDocFromAK007AndUpdateFormDataByRequestId">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="receiveDocFromAK007AndUpdateFormDataByRequestIdRequest">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="receiveDocFromAK007AndUpdateFormDataByRequestIdResponse">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="sendData">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="sendDataRequest">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="sendDataResponse">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="sendBaseXMLEsbWebServiceToAk006">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="sendBaseXMLEsbWebServiceToAk006Request">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="sendBaseXMLEsbWebServiceToAk006Response">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="synchronizeOdocExchangeReceiveOrSendUnit">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="synchronizeOdocExchangeReceiveOrSendUnitRequest">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="synchronizeOdocExchangeReceiveOrSendUnitResponse">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="postDocOperateData">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="postDocOperateDataRequest">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="postDocOperateDataResponse">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="postReceivedRouteStatusData">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="postReceivedRouteStatusDataRequest">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="postReceivedRouteStatusDataResponse">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="login">
+            <wsdlsoap:operation soapAction="urn:com.engine.odocExchange.ws.OdocExchangeWebService.login"/>
+            <wsdl:input name="loginRequest">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="loginResponse">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="updateReceiveDocStatus">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="updateReceiveDocStatusRequest">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="updateReceiveDocStatusResponse">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getReceiveSystemXml">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="getReceiveSystemXmlRequest">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getReceiveSystemXmlResponse">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="postReceivedOperateStatusData">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="postReceivedOperateStatusDataRequest">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="postReceivedOperateStatusDataResponse">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="receiveDocFromE8AndCreateWorkflow">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="receiveDocFromE8AndCreateWorkflowRequest">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="receiveDocFromE8AndCreateWorkflowResponse">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="receiveData">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="receiveDataRequest">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="receiveDataResponse">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getDocOperateData">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="getDocOperateDataRequest">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getDocOperateDataResponse">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAllUnProcessData">
+            <wsdlsoap:operation soapAction=""/>
+            <wsdl:input name="getAllUnProcessDataRequest">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getAllUnProcessDataResponse">
+                <wsdlsoap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="OdocExchangeWebService">
+        <wsdl:port name="OdocExchangeWebServiceHttpPort" binding="tns:OdocExchangeWebServiceHttpBinding">
+            <wsdlsoap:address location="http://61.129.165.86:8080/services/OdocExchangeWebService"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

@@ -14,10 +14,19 @@ import java.rmi.RemoteException;
  */
 public class Client {
     public static void main(String[] args) throws ServiceException, RemoteException {
-        final OdocExchangeWebServicePortType port = new OdocExchangeWebServiceLocator().getOdocExchangeWebServiceHttpPort();
+        final OdocExchangeWebServicePortType login = new OdocExchangeWebServiceLocator("http://192.168.2.84:6001/odoc/login").getOdocExchangeWebServiceHttpPort();
+        System.out.println(login.login("xieguojun","password",1,""));
 
-        System.out.println(port.getAccessSystemData("谢国钧"));
-        System.out.println(port.sendData("","谢国钧"));
-        System.out.println(port.login("xieguojun","password",1,""));
+        final OdocExchangeWebServicePortType getAccessSystemData =
+                new OdocExchangeWebServiceLocator("http://192.168.2.84:6001/odoc/getAccessSystemData").getOdocExchangeWebServiceHttpPort();
+        System.out.println(getAccessSystemData.getAccessSystemData("谢国钧"));
+
+        final OdocExchangeWebServicePortType getDocOperateData =
+                new OdocExchangeWebServiceLocator("http://192.168.2.84:6001/odoc/getDocOperateData").getOdocExchangeWebServiceHttpPort();
+        System.out.println(getDocOperateData.getDocOperateData(1,""));
+
+        final OdocExchangeWebServicePortType sendData =
+                new OdocExchangeWebServiceLocator("http://192.168.2.84:6001/odoc/sendData").getOdocExchangeWebServiceHttpPort();
+        System.out.println(sendData.sendData("","谢国钧"));
     }
 }
